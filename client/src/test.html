@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Countdown Timer:</h1><br>
+  <div id="container">
+    <p>
+      <span id="message"></span>
+      <strong>Days: <span id="days"></span></strong>
+      <strong>Hours: <span id="hours"></span></strong>
+      <strong>Minutes: <span id="minutes"></span></strong>
+      <strong>Seconds: <span id="seconds"></span></strong>
+      <strong>Milliseconds: <span id="milliSeconds"></span></strong>
+    </p>
+  </div>
+
+  <div id="container" realtime>
+    <p>
+      <span id="message"></span>
+      <strong>Days: <span id="days"></span></strong>
+      <strong>Hours: <span id="hours"></span></strong>
+      <strong>Minutes: <span id="minutes"></span></strong>
+      <strong>Seconds: <span id="seconds"></span></strong>
+      <strong>Milliseconds: <span id="milliSeconds"></span></strong>
+    </p>
+  </div>
+
+</body>
+<script src="/client/node_modules/react-realtime-countdown-timer/js/countdown.js"></script>
+<script>
+  CountdownTimer(
+    {
+      daysElement: document.querySelector('#days'),
+      hoursElement: document.querySelector('#hours'),
+      minutesElement: document.querySelector('#minutes'),
+      secondsElement: document.querySelector('#seconds'),
+      milliSecondsElement: document.querySelector('#milliSeconds'),
+      messageElement: document.querySelector('#message'),
+    },
+    null,
+    null,
+    1000,
+    1000 * 60 * 1
+  );
+
+  CountdownTimer(
+    {
+      daysElement: document.querySelector('[realtime] #days'),
+      hoursElement: document.querySelector('[realtime] #hours'),
+      minutesElement: document.querySelector('[realtime] #minutes'),
+      secondsElement: document.querySelector('[realtime] #seconds'),
+      milliSecondsElement: document.querySelector('[realtime] #milliSeconds'),
+      messageElement: document.querySelector('[realtime] #message'),
+    },
+
+  );
+</script>
+
+</html>
